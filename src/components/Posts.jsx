@@ -6,12 +6,20 @@ import { v4 } from 'uuid';
 const Posts = () => {
     const dispatch = useDispatch();
     const posts = useSelector((state) => state.posts.posts);
+    const isLoading = useSelector((state) => state.posts.loading)
 
+    const postsHandler = () => {
+        if (posts.length >= 100){
+            return
+        } 
+        dispatch(getPosts())
+    } 
     return (
         <div className='flex flex-col items-center'>
             <button
                 className='text-2xl px-4 py-2 rounded-sm border border-cyan-200 w-28 mb-16 hover:bg-gray-800'
-                onClick={() => dispatch(getPosts())}
+                onClick={() => postsHandler()}
+                disabled={isLoading}
             >
                 Posts
             </button>
