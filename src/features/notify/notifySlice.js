@@ -21,10 +21,7 @@ export const notifySlice = createSlice({
         },
         textNotify: (state, action) => {
             state.notifies = action.payload;
-        },
-        delNotify:(state) => {
-            state.notifies = "";
-        },
+        }
     },
     extraReducers: (builder) => {
         builder

@@ -1,8 +1,4 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import userSlice from '../features/user/userSlice'
-import todosSlice from '../features/todos/todosSlice'
-import postsSlice from '../features/posts/postsSlice'
-import notifySlice from '../features/notify/notifySlice'
 import storage from 'redux-persist/lib/storage'
 import { persistStore,
      persistReducer,
@@ -14,6 +10,10 @@ import { persistStore,
      REHYDRATE
     
     } from 'redux-persist'
+import userSlice from '../features/user/userSlice'
+import todosSlice from '../features/todos/todosSlice'
+import postsSlice from '../features/posts/postsSlice'
+import notifySlice from '../features/notify/notifySlice'
 
 const rootReducer = combineReducers({
         user: userSlice,
